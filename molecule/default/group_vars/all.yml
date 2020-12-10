@@ -19,7 +19,26 @@ bind_forwarders:
   - '8.8.4.4'
 bind_recursion: true
 bind_dns64: true
-bind_query_log: 'data/query.log'
+#bind_query_log: 'data/query.log'
+dns_log_dir: "/var/log/named"
+bind_log: "{{ dns_log_dir }}/bing.log"
+
+bind_other_logs:
+  - file: "{{ dns_log_dir }}/update.log"
+    size: 100k
+    name: update
+    versions: 3
+  - file: "{{ dns_log_dir }}/security.log"
+    size: 100k
+    name: security
+    versions: 3
+  
+bind_query_log:
+  file: "{{ dns_log_dir }}/query.log"
+  versions: 3
+  size: 5m
+
+
 bind_check_names: 'master ignore'
 bind_zone_minimum_ttl: "2D"
 bind_zone_ttl: "2W"
