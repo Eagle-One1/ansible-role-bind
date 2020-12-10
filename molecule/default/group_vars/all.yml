@@ -24,7 +24,7 @@ dns_log_dir: "/var/log/named"
 bind_log: "{{ dns_log_dir }}/bing.log"
 
 bind_other_logs:
-  - file: "{{ dns_log_dir }}/update.log"
+  - file: "{{ dns_log_dir }}/heho/update.log"
     size: 100k
     name: update
     versions: 3
@@ -34,7 +34,7 @@ bind_other_logs:
     versions: 3
   
 bind_query_log:
-  file: "{{ dns_log_dir }}/query.log"
+  file: "{{ dns_log_dir }}/coucou/query.log"
   versions: 3
   size: 5m
 
