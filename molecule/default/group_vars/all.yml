@@ -28,7 +28,7 @@ bind_other_logs:
     size: 100k
     name: update
     versions: 3
-  - file: "{{ dns_log_dir }}/security.log"
+  - file: "{{ dns_log_dir }}/plop/security.log"
     size: 100k
     name: security
     versions: 3
